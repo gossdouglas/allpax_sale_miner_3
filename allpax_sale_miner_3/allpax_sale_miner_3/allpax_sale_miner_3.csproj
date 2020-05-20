@@ -88,6 +88,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -180,8 +182,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\allpax_sale_miner.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>allpax_sale_miner.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\allpax_sale_miner.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>allpax_sale_miner.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\allpax_sale_miner.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>allpax_sale_miner.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\tbl_customer.cs">
+      <DependentUpon>allpax_sale_miner.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -195,6 +215,16 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\allpax_sale_miner.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>allpax_sale_miner.edmx</DependentUpon>
+      <LastGenOutput>allpax_sale_miner.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\allpax_sale_miner.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>allpax_sale_miner.edmx</DependentUpon>
+      <LastGenOutput>allpax_sale_miner.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -218,6 +248,13 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <EntityDeploy Include="Models\allpax_sale_miner.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>allpax_sale_miner.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\allpax_sale_miner.edmx.diagram">
+      <DependentUpon>allpax_sale_miner.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -355,6 +392,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
