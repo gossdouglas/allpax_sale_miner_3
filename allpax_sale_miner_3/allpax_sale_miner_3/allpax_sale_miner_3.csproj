@@ -202,6 +202,9 @@
     <Compile Include="Models\tbl_customer.cs">
       <DependentUpon>allpax_sale_miner.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tbl_customer_eqpmt.cs">
+      <DependentUpon>allpax_sale_miner.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

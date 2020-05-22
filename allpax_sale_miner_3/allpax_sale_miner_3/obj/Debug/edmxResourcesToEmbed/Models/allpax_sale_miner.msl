@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="allpax_sale_minerModelStoreContainer" CdmEntityContainer="allpax_sale_minerEntities">
+    <EntitySetMapping Name="tbl_customer">
+      <EntityTypeMapping TypeName="allpax_sale_minerModel.tbl_customer">
+        <MappingFragment StoreEntitySet="tbl_customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="customerCode" ColumnName="customerCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_customer_eqpmt">
+      <EntityTypeMapping TypeName="allpax_sale_minerModel.tbl_customer_eqpmt">
+        <MappingFragment StoreEntitySet="tbl_customer_eqpmt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="eqpmtType" ColumnName="eqpmtType" />
+          <ScalarProperty Name="machineID" ColumnName="machineID" />
+          <ScalarProperty Name="customerCode" ColumnName="customerCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -26,5 +26,6 @@ namespace allpax_sale_miner_3.Models
         }
     
         public virtual DbSet<tbl_customer> tbl_customer { get; set; }
+        public virtual DbSet<tbl_customer_eqpmt> tbl_customer_eqpmt { get; set; }
     }
 }

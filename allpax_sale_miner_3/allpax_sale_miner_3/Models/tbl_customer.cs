@@ -14,6 +14,12 @@ namespace allpax_sale_miner_3.Models
     
     public partial class tbl_customer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbl_customer()
+        {
+            this.tbl_customer_eqpmt = new HashSet<tbl_customer_eqpmt>();
+        }
+    
         public string customerCode { get; set; }
         public string name { get; set; }
         public string address { get; set; }
@@ -21,5 +27,8 @@ namespace allpax_sale_miner_3.Models
         public string state { get; set; }
         public string zipCode { get; set; }
         public int id { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_customer_eqpmt> tbl_customer_eqpmt { get; set; }
     }
 }
