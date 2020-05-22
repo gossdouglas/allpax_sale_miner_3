@@ -1,1 +1,80 @@
-﻿
+﻿@model IEnumerable<allpax_sale_miner_3.Models.tbl_customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <head>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dtBasicExample').DataTable({
+                    "searching": false, // false to disable search (or any other option)
+                    "order": [[1, "asc"]]
+                });
+                $('.dataTables_length').addClass('bs-select');
+            });
+        </script>
+
+    </head>
+    
+    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th class="th-sm">
+                    Name
+
+                </th>
+                <th class="th-sm">
+                    Position
+
+                </th>
+                <th class="th-sm">
+                    Office
+
+                </th>
+                <th class="th-sm">
+                    Age
+
+                </th>
+                <th class="th-sm">
+                    Start date
+
+                </th>
+                <th class="th-sm">
+                    Salary
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+            </tr>
+            <tr>
+                <td>Garrett Winters</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>2011/07/25</td>
+                <td>$170,750</td>
+            </tr>
+            <tr>
+                <td>Ashton Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                <td>$86,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
