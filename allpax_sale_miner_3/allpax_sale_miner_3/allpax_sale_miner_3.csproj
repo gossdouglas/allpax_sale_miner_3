@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerEqpmtMgmtController.cs" />
     <Compile Include="Controllers\CustomerMgmtController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -390,6 +391,11 @@
     <Content Include="Views\CustomerMgmt\Details.cshtml" />
     <Content Include="Views\CustomerMgmt\Edit.cshtml" />
     <Content Include="Views\CustomerMgmt\Index.cshtml" />
+    <Content Include="Views\CustomerEqpmtMgmt\Create.cshtml" />
+    <Content Include="Views\CustomerEqpmtMgmt\Delete.cshtml" />
+    <Content Include="Views\CustomerEqpmtMgmt\Details.cshtml" />
+    <Content Include="Views\CustomerEqpmtMgmt\Edit.cshtml" />
+    <Content Include="Views\CustomerEqpmtMgmt\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
