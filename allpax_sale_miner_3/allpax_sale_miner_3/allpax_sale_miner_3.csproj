@@ -217,6 +217,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\mdb.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -244,6 +245,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\datatables.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -270,6 +272,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\mdb.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -390,12 +393,15 @@
     <Content Include="Views\CustomerMgmt\Delete.cshtml" />
     <Content Include="Views\CustomerMgmt\Details.cshtml" />
     <Content Include="Views\CustomerMgmt\Edit.cshtml" />
-    <Content Include="Views\CustomerMgmt\Index.cshtml" />
+    <Content Include="Views\CustomerMgmt\Index-orig.cshtml" />
     <Content Include="Views\CustomerEqpmtMgmt\Create.cshtml" />
     <Content Include="Views\CustomerEqpmtMgmt\Delete.cshtml" />
     <Content Include="Views\CustomerEqpmtMgmt\Details.cshtml" />
     <Content Include="Views\CustomerEqpmtMgmt\Edit.cshtml" />
     <Content Include="Views\CustomerEqpmtMgmt\Index.cshtml" />
+    <Content Include="Views\CustomerMgmt\Index.cshtml" />
+    <Content Include="Views\CustomerMgmt\Index-dt.cshtml" />
+    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
