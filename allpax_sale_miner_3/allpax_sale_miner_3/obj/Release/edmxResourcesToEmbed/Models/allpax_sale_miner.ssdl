@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="allpax_sale_minerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_customer">
+    <Key>
+      <PropertyRef Name="customerCode" />
+    </Key>
+    <Property Name="customerCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="zipCode" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_customer_eqpmt">
+    <Key>
+      <PropertyRef Name="customerCode" />
+      <PropertyRef Name="machineID" />
+    </Key>
+    <Property Name="customerCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="machineID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="eqpmtType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_customer_eqpmt_tbl_customer">
+    <End Role="tbl_customer" Type="Self.tbl_customer" Multiplicity="1" />
+    <End Role="tbl_customer_eqpmt" Type="Self.tbl_customer_eqpmt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_customer">
+        <PropertyRef Name="customerCode" />
+      </Principal>
+      <Dependent Role="tbl_customer_eqpmt">
+        <PropertyRef Name="customerCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="allpax_sale_minerModelStoreContainer">
+    <EntitySet Name="tbl_customer" EntityType="Self.tbl_customer" Schema="cmps411" store:Type="Tables" />
+    <EntitySet Name="tbl_customer_eqpmt" EntityType="Self.tbl_customer_eqpmt" Schema="cmps411" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_customer_eqpmt_tbl_customer" Association="Self.FK_tbl_customer_eqpmt_tbl_customer">
+      <End Role="tbl_customer" EntitySet="tbl_customer" />
+      <End Role="tbl_customer_eqpmt" EntitySet="tbl_customer_eqpmt" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

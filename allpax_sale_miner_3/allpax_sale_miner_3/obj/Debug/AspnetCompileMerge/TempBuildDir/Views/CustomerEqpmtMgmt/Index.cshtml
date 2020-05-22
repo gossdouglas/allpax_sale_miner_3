@@ -1,0 +1,46 @@
+﻿@model IEnumerable<allpax_sale_miner_3.Models.tbl_customer_eqpmt>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.eqpmtType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_customer.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.eqpmtType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_customer.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
