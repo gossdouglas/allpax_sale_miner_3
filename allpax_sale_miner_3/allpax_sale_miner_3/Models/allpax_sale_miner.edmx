@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="customerCode" />
           </Key>
-          <Property Name="customerCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="customerCode" Type="varchar" MaxLength="3" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
@@ -22,7 +22,7 @@
             <PropertyRef Name="customerCode" />
             <PropertyRef Name="machineID" />
           </Key>
-          <Property Name="customerCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="customerCode" Type="varchar" MaxLength="3" Nullable="false" />
           <Property Name="machineID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="eqpmtType" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
@@ -63,7 +63,7 @@
           <Key>
             <PropertyRef Name="customerCode" />
           </Key>
-          <Property Name="customerCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customerCode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="city" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -77,7 +77,7 @@
             <PropertyRef Name="customerCode" />
             <PropertyRef Name="machineID" />
           </Key>
-          <Property Name="customerCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customerCode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="machineID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="eqpmtType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />

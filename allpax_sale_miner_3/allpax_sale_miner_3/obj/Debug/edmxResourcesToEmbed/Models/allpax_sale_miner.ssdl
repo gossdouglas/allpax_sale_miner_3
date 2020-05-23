@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="customerCode" />
     </Key>
-    <Property Name="customerCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="customerCode" Type="varchar" MaxLength="3" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
@@ -17,7 +17,7 @@
       <PropertyRef Name="customerCode" />
       <PropertyRef Name="machineID" />
     </Key>
-    <Property Name="customerCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="customerCode" Type="varchar" MaxLength="3" Nullable="false" />
     <Property Name="machineID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="eqpmtType" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
