@@ -17,103 +17,64 @@ namespace allpax_sale_miner_3.Controllers
         // GET: CustomerMgmt
         public ActionResult Index()
         {
-            return View(db.tbl_customer.ToList());
+            allpax_sale_minerEntities entities = new allpax_sale_minerEntities();
+            List<tbl_customer> custMgmt = entities.tbl_customer.ToList();
+
+            return View(custMgmt.ToList());
         }
 
-        // GET: CustomerMgmt/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            tbl_customer tbl_customer = db.tbl_customer.Find(id);
-            if (tbl_customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tbl_customer);
-        }
-
-        // GET: CustomerMgmt/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: CustomerMgmt/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //begin CMPS 411 controller code
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "customerCode,name,address,city,state,zipCode,id")] tbl_customer tbl_customer)
+        public ActionResult AddCustomer(tbl_customer customerAdd)
         {
-            if (ModelState.IsValid)
+            using (allpax_sale_minerEntities entities = new allpax_sale_minerEntities())
             {
-                db.tbl_customer.Add(tbl_customer);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                entities.tbl_customer.Add(new tbl_customer
+                {
+                    customerCode = customerAdd.customerCode,
+                    name = customerAdd.name,
+                    address = customerAdd.address,
+                    city = customerAdd.city,
+                    state = customerAdd.state,
+                    zipCode = customerAdd.zipCode,
+                });
+
+
+                entities.SaveChanges();
             }
 
-            return View(tbl_customer);
+            return new EmptyResult();
         }
 
-        // GET: CustomerMgmt/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult DeleteCustomer(tbl_customer custDelete)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            tbl_customer tbl_customer = db.tbl_customer.Find(id);
-            if (tbl_customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tbl_customer);
-        }
-
-        // POST: CustomerMgmt/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "customerCode,name,address,city,state,zipCode,id")] tbl_customer tbl_customer)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(tbl_customer).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(tbl_customer);
-        }
-
-        // GET: CustomerMgmt/Delete/5
-        public ActionResult Delete(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            tbl_customer tbl_customer = db.tbl_customer.Find(id);
-            if (tbl_customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tbl_customer);
-        }
-
-        // POST: CustomerMgmt/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
-        {
-            tbl_customer tbl_customer = db.tbl_customer.Find(id);
+            tbl_customer tbl_customer = db.tbl_customer.Find(custDelete.id);
             db.tbl_customer.Remove(tbl_customer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult UpdateCustomer(tbl_customer custUpdate)
+        {
+            using (allpax_sale_minerEntities entities = new allpax_sale_minerEntities())
+            {
+                tbl_customer updatedCustomer = (from c in entities.tbl_customer
+                                                where c.id == custUpdate.id
+                                                select c).FirstOrDefault();
+                updatedCustomer.customerCode = custUpdate.customerCode;
+                updatedCustomer.name = custUpdate.name;
+                updatedCustomer.address = custUpdate.address;
+                updatedCustomer.city = custUpdate.city;
+                updatedCustomer.state = custUpdate.state;
+                updatedCustomer.zipCode = custUpdate.zipCode;
+
+                entities.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
+        //end CMPS 411 controller code
 
         protected override void Dispose(bool disposing)
         {
@@ -123,5 +84,6 @@ namespace allpax_sale_miner_3.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }
