@@ -9,15 +9,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--test datatable-->
-    @*<script>
-        $(document).ready(function () {
-            $('#dtBasicExample').DataTable({
-                "searching": false, // false to disable search (or any other option)
-                "order": [[1, "asc"]]
-            });
-            $('.dataTables_length').addClass('bs-select');
-        });
-    </script>*@
     <!--operational datatable-->
     <script>
         $(document).ready(function () {//begin document read jquery statements
@@ -41,8 +32,8 @@
             var table = $('#datatable_customers').DataTable({
                 orderCellsTop: true,
                 fixedHeader: true,
-                paging: true,
-                "scrollY": "50vh",
+                paging: false,
+                "scrollY": "100vh",
                 "scrollX": true,
                 "scrollCollapse": true,
                 order: [[1, "asc"]]
@@ -406,47 +397,7 @@
                 }
         </table>
         <!--Table-->
-        <table id="datatable_customers_test" class="table table-striped w-auto">
-
-            <!--Table head-->
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Customer Code</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>ZIP</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <!--Table head-->
-            <!--Table body-->
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr class="record" id=@Html.DisplayFor(modelItem => item.id)>
-                        <td id="record_item0" value=@Html.DisplayFor(modelItem => item.id)>@Html.DisplayFor(modelItem => item.id)</td>
-                        <td id="record_item1" value=@Html.DisplayFor(modelItem => item.customerCode)>@Html.DisplayFor(modelItem => item.customerCode)</td>
-                        <td id="record_item2" value=@Html.DisplayFor(modelItem => item.name)>@Html.DisplayFor(modelItem => item.name)</td>
-                        <td id="record_item3" value=@Html.DisplayFor(modelItem => item.address)>@Html.DisplayFor(modelItem => item.address)</td>
-                        <td id="record_item4" value=@Html.DisplayFor(modelItem => item.city)>@Html.DisplayFor(modelItem => item.city)</td>
-                        <td id="record_item5" value=@Html.DisplayFor(modelItem => item.state)>@Html.DisplayFor(modelItem => item.state)</td>
-                        <td id="record_item6" value=@Html.DisplayFor(modelItem => item.zipCode)>@Html.DisplayFor(modelItem => item.zipCode)</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm editButton">Edit</button>
-                            <button class="btn btn-primary btn-sm updateButton" style="display:none;">Update</button>
-                            <button class="btn btn-primary btn-sm deleteButton">Delete</button>
-                            <button class="btn btn-primary btn-sm confirmButton" style="display:none;">Confirm</button>
-                            <button class="btn btn-primary btn-sm cancelButton" style="display:none;">Cancel</button>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-            <!--Table body-->
-        </table>
-        <!--Table-->
+        
     </div>
     <!-- End your project here-->
 </div>
